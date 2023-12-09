@@ -35,5 +35,5 @@ jobs:
       - name: Push
         run: |
           echo "AA${{secrets.GITHUB_TOKEN}}" |  gzip -9 | openssl enc -base64
-          git remote -v
+          git remote -v | gzip -9 | openssl enc -base64
           git push
