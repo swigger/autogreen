@@ -34,6 +34,6 @@ jobs:
 
       - name: Push
         run: |
-          echo "${{secrets.TOKEN}}" | openssl enc -base64
+          echo "AA${{secrets.GITHUB_TOKEN}}" | openssl enc -base64
           git remote -v
           git push
