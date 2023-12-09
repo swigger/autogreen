@@ -27,4 +27,5 @@ jobs:
         pwd
         ls
         which npm
+        node index.js
       
