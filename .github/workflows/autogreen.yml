@@ -28,7 +28,7 @@ jobs:
           git config --local user.email "${{ github.actor }}@gmail.com"
           git remote set-url origin https://${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          echo "modify at $(date)" >> autogreen.txt"
+          echo "modify at $(date)" >> autogreen.txt
           git add autogreen.txt
 
       - name: Commit (default)
