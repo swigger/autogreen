@@ -38,7 +38,7 @@ jobs:
         run: |
           NUM=$((0x$(dd if=/dev/urandom of=/dev/stdout bs=1 count=4 2>/dev/null | xxd -p)%7))
           if [ $NUM = 0 ] ; then SKIP=true ; else SKIP=false ; fi
-          echo "::set-output name=skip::$SKIP"
+          echo "skip=$SKIP" >> $GITHUB_OUTPUT
 
       - name: Init NPM
         if: ${{ steps.action_determiner.outputs.skip == 'false' }}
